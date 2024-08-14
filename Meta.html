@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de KPI Moderno</title>
+    <style>
+        /* Estilo base do card */
+        .kpi-card {
+            width: 350px;
+            padding: 25px;
+            border-radius: 15px;
+            background-color: #1e1e2f;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin: 100px auto;
+            position: relative;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Estilo para o valor atual do KPI */
+        .kpi-value {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            transition: color 0.5s ease;
+        }
+
+        /* Estilo para o texto de meta */
+        .kpi-meta {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #a0a0a0;
+        }
+
+        /* Barra de progresso moderna */
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background-color: #3a3a4f;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            background-color: #00ff99;
+            border-radius: 6px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* Efeito de alerta */
+        .kpi-card.alert .kpi-value {
+            color: #ff4d4f;
+        }
+
+        .progress-bar-inner.alert {
+            background-color: #ff4d4f;
+        }
+
+        /* Efeito de sucesso (meta atingida) */
+        .kpi-card.success .kpi-value {
+            color: #28a745;
+        }
+
+        .progress-bar-inner.success {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <!-- Card Container -->
+    <div id="kpi-card" class="kpi-card">
+        <!-- Valor atual do KPI -->
+        <div id="kpi-value" class="kpi-value">R$ 0,00</div>
+        <!-- Meta definida -->
+        <div id="kpi-meta" class="kpi-meta">Meta: R$ 20.000,00</div>
+        <!-- Barra de progresso -->
+        <div class="progress-bar">
+            <div id="progress-bar-inner" class="progress-bar-inner"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configurações iniciais do KPI e da meta
+        const valorFinal = 20000; // Valor final do KPI
+        const meta = 20000; // Meta a ser atingida
+        const incremento = Math.ceil(meta / 100); // Incremento por intervalo
+        const intervalo = 30; // Tempo em milissegundos entre os incrementos
+
+        // Seleção dos elementos HTML que serão manipulados
+        const valorElemento = document.getElementById('kpi-value');
+        const metaElemento = document.getElementById('kpi-meta');
+        const barraProgresso = document.getElementById('progress-bar-inner');
+        const cardElemento = document.getElementById('kpi-card');
+
+        // Atualiza o texto da meta com o valor real
+        metaElemento.textContent = `Meta: ${formatarMoeda(meta)}`;
+
+        // Função para atualizar o valor do KPI com animação de contagem
+        function atualizarKPI() {
+            let valorAtual = 0;
+            const intervaloID = setInterval(() => {
+                if (valorAtual < valorFinal) {
+                    valorAtual += incremento;
+                    if (valorAtual > valorFinal) valorAtual = valorFinal;
+                    valorElemento.textContent = formatarMoeda(valorAtual);
+                    // Atualiza a largura da barra de progresso
+                    barraProgresso.style.width = `${(valorAtual / meta) * 100}%`;
+                } else {
+                    clearInterval(intervaloID); // Para o intervalo quando o valor atinge o valor final
+                    verificarMeta(); // Chama a função para verificar se a meta foi atingida
+                }
+            }, intervalo);
+        }
+
+        // Função para formatar o valor como moeda
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // Função para verificar se a meta foi atingida
+        function verificarMeta() {
+            if (valorFinal < meta) {
+                // Se a meta não foi atingida, aplica o efeito de alerta
+                cardElemento.classList.add('alert');
+                barraProgresso.classList.add('alert');
+            } else {
+                // Se a meta foi atingida, aplica o efeito de sucesso
+                cardElemento.classList.add('success');
+                barraProgresso.classList.add('success');
+            }
+        }
+
+        // Inicia a animação de contagem quando a página é carregada
+        window.onload = atualizarKPI;
+    </script>
+</body>
+</html>
