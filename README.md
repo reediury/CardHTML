@@ -3,28 +3,35 @@
 Este repositório contém um exemplo de um card de KPI moderno, desenvolvido com HTML, CSS e JavaScript puro, para uso em Power BI. Este projeto permite exibir valores de KPI animados com uma barra de progresso dinâmica, verificando se a meta foi atingida e alterando a cor do card de acordo com o desempenho.
 
 👤 Autor
-Nome: Reed Iury 
+
+Reed Iury 
 
 LinkedIn: (https://www.linkedin.com/in/reediury/)
 
 📦 Arquivos no Repositório
+
 index.html: O código-fonte completo do card de KPI.
+
 CARD_HTML.pbix: Arquivo Power BI de exemplo com o card aplicado.
 
 🚀 Instruções de Uso
+
 1. Introdução
+
 Para utilizar este card de KPI em seu relatório do Power BI, será necessário o uso de um visual personalizado que suporte HTML. Neste exemplo, estamos utilizando o visual HTML Content.
 
 2. Como Usar
+
 Baixe e instale o visual HTML Content:
 
-Visite (www.html-content.com) e siga as instruções para adicionar o visual personalizado ao Power BI, ou adicione o visual a partir da opção (Obter mais visuais) do Power BI
+Você pode baixar pelo site (www.html-content.com) e siga as instruções para adicionar o visual personalizado ao Power BI, ou adicione o visual a partir da opção (Obter mais visuais) do Power BI.
 
-Este arquivo (CARD_HTML.pbix) contém um exemplo de relatório Power BI com o card de KPI já aplicado.
+O arquivo (CARD_HTML.pbix) contém um exemplo de relatório Power BI com o card de KPI já aplicado.
 
 Utilize o código HTML:
 
 Copie o código completo do arquivo index.html.
+
 Ao inserir o código HTML no visual, substitua todas as aspas duplas (") por duas aspas duplas (""). Isso é necessário porque o Power BI utiliza aspas duplas para delimitar strings, e ao inserir código HTML com aspas duplas simples, o Power BI pode interpretar de forma incorreta o código, resultando em erros de renderização.
 
 3. Explicação do Código
