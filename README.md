@@ -1,55 +1,59 @@
 📊 Card de KPI Moderno para Power BI
+=
 
-Este repositório contém um exemplo de um card de KPI moderno, desenvolvido com HTML, CSS e JavaScript puro, para uso em Power BI. Este projeto permite exibir valores de KPI animados com uma barra de progresso dinâmica, verificando se a meta foi atingida e alterando a cor do card de acordo com o desempenho.
+Este repositório contém um exemplo de um card de KPI desenvolvido com HTML, CSS e JavaScript puro. O card exibe valores de KPI com uma animação e barra de progresso, mudando a cor conforme a meta é atingida.
 
 👤 Autor
+=
 
-Reed Iury 
+Nome: Reed Iury
 
 LinkedIn: (https://www.linkedin.com/in/reediury/)
 
-📦 Arquivos no Repositório
+📦 Arquivos
+=
 
-index.html: O código-fonte completo do card de KPI.
+index.html: Código-fonte completo do card de KPI.
 
-CARD_HTML.pbix: Arquivo Power BI de exemplo com o card aplicado.
+CARD_HTML.pbix: Exemplo de relatório Power BI com o card aplicado.
 
 🚀 Instruções de Uso
+=
+Visual Personalizado:
 
-1. Introdução
+Para usar este card no Power BI, é necessário um visual que suporte HTML. Recomendo o HTML Content, que pode ser baixado e instalado através do site (https://www.html-content.com/) ou pela opção "Obter mais visuais" no Power BI.
 
-Para utilizar este card de KPI em seu relatório do Power BI, será necessário o uso de um visual personalizado que suporte HTML. Neste exemplo, estamos utilizando o visual HTML Content.
+Inserção do Código:
 
-2. Como Usar
+Copie o código do index.html.
+Ao inserir o código no visual HTML, substitua todas as aspas duplas (") por duas aspas duplas (""). Isso é necessário para evitar erros de interpretação no Power BI.
 
-Baixe e instale o visual HTML Content:
+Arquivo de Exemplo:
 
-Você pode baixar pelo site (www.html-content.com) e siga as instruções para adicionar o visual personalizado ao Power BI, ou adicione o visual a partir da opção (Obter mais visuais) do Power BI.
+O arquivo CARD_HTML.pbix contém um exemplo de como o card de KPI é exibido em um relatório Power BI.
 
-O arquivo (CARD_HTML.pbix) contém um exemplo de relatório Power BI com o card de KPI já aplicado.
-
-Utilize o código HTML:
-
-Copie o código completo do arquivo index.html.
-
-Ao inserir o código HTML no visual, substitua todas as aspas duplas (") por duas aspas duplas (""). Isso é necessário porque o Power BI utiliza aspas duplas para delimitar strings, e ao inserir código HTML com aspas duplas simples, o Power BI pode interpretar de forma incorreta o código, resultando em erros de renderização.
-
-3. Explicação do Código
 
 🛠 Variáveis Principais
+=
 
-valorFinal: Define o valor final do KPI que será exibido. Este é o valor que será animado até atingir o valor máximo desejado.
+valorFinal: Valor final do KPI, exibido e animado.
 
-meta: Representa o valor da meta que deve ser alcançada. Se o valor final for maior ou igual a este valor, o card e a barra de progresso ficarão verdes; caso contrário, ficarão vermelhos.
+meta: Meta a ser alcançada; o card e a barra de progresso mudam de cor com base na meta atingida.
 
-incremento: Define o valor pelo qual o KPI será incrementado em cada passo da animação. Ele é calculado automaticamente com base na meta para criar uma animação suave.
+incremento: Valor adicionado a cada passo da animação.
 
-intervalo: Determina o tempo em milissegundos entre cada incremento. Um valor menor resulta em uma animação mais rápida.
+intervalo: Tempo (em milissegundos) entre os incrementos da animação.
+
 
 📜 Funções Principais
+=
+atualizarKPI(): Anima o valor do KPI e ajusta a barra de progresso.
 
-atualizarKPI(): Esta função inicia a animação do KPI, aumentando o valor exibido progressivamente até atingir o valorFinal. Ela também ajusta a largura da barra de progresso em proporção ao valor atual.
+formatarMoeda(valor): Formata o valor como moeda brasileira (R$).
 
-formatarMoeda(valor): Formata um número para o formato de moeda brasileiro (R$), garantindo que o KPI seja exibido corretamente como um valor monetário.
+verificarMeta(): Ajusta a cor do card e da barra de progresso com base na meta.
 
-verificarMeta(): Verifica se o valorFinal é maior ou igual à meta. Se for, aplica o estilo de sucesso (verde); caso contrário, aplica o estilo de alerta (vermelho).
+☺️
+=
+
+Se tiver dúvidas ou sugestões, entre em contato comigo pelo LinkedIn.
