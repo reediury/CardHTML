@@ -53,7 +53,9 @@ formatarMoeda(valor): Formata o valor como moeda brasileira (R$).
 
 verificarMeta(): Ajusta a cor do card e da barra de progresso com base na meta.
 
-☺️
+Card
 =
+
+https://github.com/user-attachments/assets/7259e6f5-cced-4306-8760-4c5167268312
 
 Se tiver dúvidas ou sugestões, entre em contato comigo pelo LinkedIn.
