@@ -3,7 +3,8 @@
 Este repositório contém um exemplo de um card de KPI moderno, desenvolvido com HTML, CSS e JavaScript puro, para uso em Power BI. Este projeto permite exibir valores de KPI animados com uma barra de progresso dinâmica, verificando se a meta foi atingida e alterando a cor do card de acordo com o desempenho.
 
 👤 Autor
-Nome: Reed Iury
+Nome: Reed Iury 
+
 LinkedIn: (https://www.linkedin.com/in/reediury/)
 
 📦 Arquivos no Repositório
