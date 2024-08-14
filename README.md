@@ -1,4 +1,4 @@
-📊 Card de KPI Moderno para Power BI
+📊 Card de KPI para Power BI
 =
 
 Este repositório contém um exemplo de um card de KPI desenvolvido com HTML, CSS e JavaScript puro. O card exibe valores de KPI com uma animação e barra de progresso, mudando a cor conforme a meta é atingida.
