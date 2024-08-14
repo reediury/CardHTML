@@ -21,7 +21,7 @@
 
         /* Estilo para o valor atual do KPI */
         .kpi-value {
-            font-size: 64px;
+            font-size: 42px;
             font-weight: bold;
             margin-bottom: 10px;
             transition: color 0.5s ease;
@@ -78,7 +78,7 @@
         <!-- Valor atual do KPI -->
         <div id="kpi-value" class="kpi-value">R$ 0,00</div>
         <!-- Meta definida -->
-        <div id="kpi-meta" class="kpi-meta">Meta: R$ 20.000,00</div>
+        <div id="kpi-meta" class="kpi-meta">Meta: R$ 0,00</div>
         <!-- Barra de progresso -->
         <div class="progress-bar">
             <div id="progress-bar-inner" class="progress-bar-inner"></div>
@@ -87,7 +87,7 @@
 
     <script>
         // Configurações iniciais do KPI e da meta
-        const valorFinal = 20000; // Valor final do KPI
+        const valorFinal = 15000; // Valor final do KPI
         const meta = 20000; // Meta a ser atingida
         const incremento = Math.ceil(meta / 100); // Incremento por intervalo
         const intervalo = 30; // Tempo em milissegundos entre os incrementos
@@ -136,8 +136,9 @@
             }
         }
 
-        // Inicia a animação de contagem quando a página é carregada
-        window.onload = atualizarKPI;
+        // Chamada direta da função após definição
+        atualizarKPI();
     </script>
 </body>
 </html>
+
